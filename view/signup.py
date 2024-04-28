@@ -10,7 +10,7 @@ from PyQt5.QtCore import *
 class UI_signup_window(QMainWindow):
   def __init__(self):
     super(UI_signup_window, self).__init__()
-    uic.loadUi("uifiles/signup_window.ui", self)
+    uic.loadUi("view/uifiles/signup_window.ui", self)
 
 
 
