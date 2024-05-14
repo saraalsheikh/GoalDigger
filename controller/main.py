@@ -6,7 +6,10 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PyQt5.QtWidgets import QApplication
 from view.login import UI_login_window
+<<<<<<< HEAD
 from view.signup import UI_signup_window
+=======
+>>>>>>> main
 
 def main():
     app = QApplication(sys.argv)
