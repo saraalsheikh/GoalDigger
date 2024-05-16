@@ -9,11 +9,6 @@ from PyQt5.QtCore import *
 
 
 class UI_signup_window(QMainWindow):
-<<<<<<< HEAD
-  def __init__(self):
-    super(UI_signup_window, self).__init__()
-    uic.loadUi("view/uifiles/signup_window.ui", self)
-=======
   signal_object = pyqtSignal()
   def __init__(self, parent=None):
     super(UI_signup_window, self).__init__(parent)
@@ -37,7 +32,6 @@ class UI_signup_window(QMainWindow):
     self.btn_login.clicked.connect(self.loginfunction)
 
     
->>>>>>> shahera
 
 
   # to create the function we create it inside the class but outside the constructor
