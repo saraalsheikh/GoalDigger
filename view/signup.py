@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
-#from controller.controller import Controller
+from controller.controller import Controller
 
 
 class UI_signup_window(QMainWindow):
@@ -16,7 +16,7 @@ class UI_signup_window(QMainWindow):
     # I had to create a absolut path instead or relative path bc of file error handling 
     ui_file_path = "C:/Users/Surface/Desktop/Agile Project/GoalDigger/view/uifiles/signup_window.ui"
     uic.loadUi("view/uifiles/signup_window.ui", self)  # "view/uifiles/signup_window.ui"
-    #self.controller = Controller()
+    self.controller = Controller()
    
    
     # Finding the necessary widgets in the UI file
@@ -40,13 +40,17 @@ class UI_signup_window(QMainWindow):
     username = self.txt_username.text()
     user_id = self.txt_userid.text()
     password = self.txt_password.text()
-    #self.controller.insert_user(username, user_id, password)
+    self.controller.insert_new_user(username, user_id, password)
     self.signal_object.emit()
     self.close()
   
   def loginfunction(self):
     self.signal_object.emit()
     self.close()
+
+    
+    #exampel how to get something from the database: 
+    #self.allusers=self.controller.retrieve_all_users()
 
     # Print the information entered by the user
     
