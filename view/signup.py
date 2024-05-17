@@ -1,3 +1,4 @@
+# signup.py
 import os
 import sys
 # This should point to the directory *above* your package if MVC_example is considered a package
@@ -9,57 +10,56 @@ from PyQt5.QtCore import *
 
 
 class UI_signup_window(QMainWindow):
-<<<<<<< HEAD
-  def __init__(self):
-    super(UI_signup_window, self).__init__()
-    uic.loadUi("view/uifiles/signup_window.ui", self)
-=======
   signal_object = pyqtSignal()
+
+
   def __init__(self, parent=None):
     super(UI_signup_window, self).__init__(parent)
     # The line below connects Gui to the iufile
-    # I had to create a absolut path instead or relative path bc of file error handling 
-    ui_file_path = "C:/Users/Surface/Desktop/Agile Project/GoalDigger/view/uifiles/signup_window.ui"
-    uic.loadUi("view/uifiles/signup_window.ui", self)  # "view/uifiles/signup_window.ui"
-    #self.controller = Controller()
-   
-   
+    uic.loadUi("view/uifiles/signup_window.ui", self)
+
     # Finding the necessary widgets in the UI file
-  
     self.btn_signup = self.findChild(QPushButton, "btn_signup")
     self.txt_username = self.findChild(QLineEdit, "txt_username")
     self.txt_password = self.findChild(QLineEdit, "txt_password")
+    self.txt_confirm_password = self.findChild(QLineEdit, "txt_confirm_password")
     self.txt_userid = self.findChild(QLineEdit, "txt_userid")
-    self.btn_login = self.findChild(QPushButton, "btn_login")
+    self.btn_welcome = self.findChild(QPushButton, "btn_welcome")
+    self.btn_welcome.clicked.connect(self.welcomefunction)
+
+
+
+    # Code that hides the password snf vonfirm password fields
+    self.txt_password.setEchoMode(QLineEdit.Password)
+    self.txt_confirm_password.setEchoMode(QLineEdit.Password)
 
     # Connect the signup button to the signup function
-    self.btn_signup.clicked.connect(self.signupfunction)
-    self.btn_login.clicked.connect(self.loginfunction)
+    #self.btn_signup.clicked.connect(self.signupfunction)
 
-    
->>>>>>> shahera
 
 
   # to create the function we create it inside the class but outside the constructor
-  def signupfunction(self):
-    # Below we are retrieving the text entered in the username, email, and password fields
-    username = self.txt_username.text()
-    user_id = self.txt_userid.text()
-    password = self.txt_password.text()
-    #self.controller.insert_user(username, user_id, password)
-    self.signal_object.emit()
-    self.close()
+  # def signupfunction(self):
+  #   # Below we are retrieving the text entered in the username, email, and password fields
+  #   username = self.txt_username.text()
+  #   user_id = self.txt_userid.text()
+  #   password = self.txt_password.text()
+  #   #self.controller.insert_user(username, user_id, password)
+  #   self.signal_object.emit()
+  #   self.close()
   
-  def loginfunction(self):
-    self.signal_object.emit()
-    self.close()
-
-    # Print the information entered by the user
-    
 
   def add_button_clicked(self):
     pass
 
-# remove when done
+  def welcomefunction(self):
+      self.signal_object.emit()
+      self.close()
 
+# remove when done
+# if __name__ == "__main__":
+#     app = QApplication(sys.argv)
+#     window = UI_signup_window()
+#     window.show()
+#     sys.exit(app.exec_())
   
