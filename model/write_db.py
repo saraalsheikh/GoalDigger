@@ -26,8 +26,8 @@ class Write_db():
         self.mycursor.close()
         self.mydb.close()
 
-    def insert_new_user(self, username, userid, password):
+    def insert_user_info(self, user_id, user_name, password):
         self.open_db()
-        self.mycursor.execute(f"INSERT INTO user_info (user_id, user_name,password) Values('{userid}', '{username}', '{password}')")
+        self.mycursor.execute(f"INSERT INTO user_info (user_id, user_name,password) Values('{user_id}', '{user_name}', '{password}')")
         self.mydb.commit()
         self.close_db()

@@ -35,22 +35,3 @@ class Read_db:
             user_info_list.append(str(tuple[2]))
         self.close_db()
         return user_info_list 
-    
-    def check_cridential(self, user_name, password):
-        self.open_db()
-        self.mycursor.execute(f"SELECT * FROM user_info WHERE user_name = '{user_name}' and password = '{password}';")
-        result = self.mycursor.fetchone()
-        user_info_list = []
-        for tuple in result:
-            user_info_list.append(str(tuple[0])) 
-            user_info_list.append(str(tuple[1]))
-            user_info_list.append(str(tuple[2]))
-            self.close_db()
-        if user_info_list !=[]:
-            return True
-        return  False
-    
-
-    #this function is not functional
-    def retrieve_users(self, user_id):
-        return "users_list"
