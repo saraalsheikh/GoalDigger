@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
-#from controller.controller import Controller
+from controller.controller import Controller
 
 
 class UI_signup_window(QMainWindow):
@@ -25,6 +25,7 @@ class UI_signup_window(QMainWindow):
     self.txt_confirm_password = self.findChild(QLineEdit, "txt_confirm_password")
     self.txt_userid = self.findChild(QLineEdit, "txt_userid")
     self.btn_welcome = self.findChild(QPushButton, "btn_welcome")
+    
     self.btn_welcome.clicked.connect(self.welcomefunction)
 
 
