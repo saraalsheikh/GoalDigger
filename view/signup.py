@@ -16,17 +16,12 @@ class UI_signup_window(QMainWindow):
   def __init__(self, parent=None):
     super(UI_signup_window, self).__init__(parent)
     # The line below connects Gui to the iufile
-<<<<<<< HEAD
-    uic.loadUi("view/uifiles/signup_window.ui", self)
-
-=======
     # I had to create a absolut path instead or relative path bc of file error handling 
     ui_file_path = "C:/Users/Surface/Desktop/Agile Project/GoalDigger/view/uifiles/signup_window.ui"
     uic.loadUi("view/uifiles/signup_window.ui", self)  # "view/uifiles/signup_window.ui"
     self.controller = Controller()
    
    
->>>>>>> main
     # Finding the necessary widgets in the UI file
     self.btn_signup = self.findChild(QPushButton, "btn_signup")
     self.txt_username = self.findChild(QLineEdit, "txt_username")
@@ -45,20 +40,6 @@ class UI_signup_window(QMainWindow):
     # Connect the signup button to the signup function
     #self.btn_signup.clicked.connect(self.signupfunction)
 
-<<<<<<< HEAD
-
-
-  # to create the function we create it inside the class but outside the constructor
-  # def signupfunction(self):
-  #   # Below we are retrieving the text entered in the username, email, and password fields
-  #   username = self.txt_username.text()
-  #   user_id = self.txt_userid.text()
-  #   password = self.txt_password.text()
-  #   #self.controller.insert_user(username, user_id, password)
-  #   self.signal_object.emit()
-  #   self.close()
-  
-=======
     
 
 
@@ -82,7 +63,6 @@ class UI_signup_window(QMainWindow):
 
     # Print the information entered by the user
     
->>>>>>> main
 
   def add_button_clicked(self):
     pass
@@ -97,4 +77,3 @@ class UI_signup_window(QMainWindow):
 #     window = UI_signup_window()
 #     window.show()
 #     sys.exit(app.exec_())
-  
