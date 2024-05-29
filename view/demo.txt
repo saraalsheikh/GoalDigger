@@ -1,7 +1,0 @@
-Hej,
-
-Detta är en test! 
-
-Hejdå
-
-Hello World!
