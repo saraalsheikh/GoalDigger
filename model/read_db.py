@@ -82,7 +82,7 @@ class Read_db:
     
     def fetch_plans(self, user_id):
         self.open_db()
-        self.mycursor.execute(f"SELECT * FROM plans WHERE user_id = '{user_id}';")
+        self.mycursor.execute(f"SELECT * FROM to_do_list WHERE user_id = '{user_id}';")
         self.list_of_tuples = self.mycursor.fetchall()
     
         user_plans_list = []
