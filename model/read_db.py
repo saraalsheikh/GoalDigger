@@ -9,7 +9,7 @@ class Read_db:
             self.mydb = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="uqTjt8dc",
+                password="root",
                 database="GoalDigger",
             )
         except mysql.connector.Error as err:
@@ -52,23 +52,44 @@ class Read_db:
     
     
     def fetch_user_id(self, username):
-        # Open the database connection
         self.open_db()
         
         # Prepare the query to get the user_id based on the username
-        query = "SELECT user_id FROM user_info WHERE username = %s;"
+        query = "SELECT user_id FROM user_info WHERE user_name = %s;"
         
         # Execute the query with the provided username
         self.mycursor.execute(query, (username,))
-        
-        # Fetch the result
         user_id_tuple = self.mycursor.fetchone()
-        
-        # Close the database connection
         self.close_db()
         
-        # Check if a result was found and return the user_id, otherwise return None
         if user_id_tuple:
             return str(user_id_tuple[0])
         else:
             return None
+    
+    
+    def authenticate_user(self, username, password):
+        self.open_db()
+        self.mycursor.execute(f"SELECT * FROM user_info WHERE user_name = '{username}' AND password = '{password}';")
+        self.list_of_tuples = self.mycursor.fetchall()
+        
+        self.close_db()
+
+        if self.list_of_tuples == []:
+          return False
+        else:
+          return True
+    
+    def fetch_plans(self, user_id):
+        self.open_db()
+        self.mycursor.execute(f"SELECT plan_date, plan_text FROM to_do_list WHERE user_id = '{user_id}';")
+        self.list_of_tuples = self.mycursor.fetchall()
+    
+        user_plans_list = []
+        for (plan_date, plan_text) in self.list_of_tuples:
+            formatted_plan = str(plan_date) + " " + plan_text  # Convert date to string
+            user_plans_list.append(formatted_plan)
+        self.close_db()
+    
+        return user_plans_list
+
