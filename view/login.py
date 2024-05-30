@@ -7,6 +7,8 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
 from view.signup import UI_signup_window
+from controller.controller import Controller
+from view.main_page import HomePage
 
 class UI_login_window(QMainWindow):
     signal_login = pyqtSignal()
@@ -33,14 +35,15 @@ class UI_login_window(QMainWindow):
     def loginfunction(self):
         username = self.txt_username.text()
         password = self.txt_password.text()
+        self.controller = Controller()
+
         if len(username) == 0 or len(password) == 0:
             self.error.setText("Please fill in the empty boxes.")
         authenticate_user=self.controller.authenticate_user(username, password)
         if authenticate_user:
             userid = self.controller.fetch_user_id(username)
-            self.home_page = UI_homepage_window(userid)
+            self.home_page = HomePage(userid)
             self.home_page.signal_login.connect(self.show)
-
             self.close()
             self.home_page.show()
         else:
