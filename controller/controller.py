@@ -7,22 +7,10 @@ class Controller:
         self.write_db = Write_db()
         self.read_db = Read_db()
 
-<<<<<<< HEAD
-    def insert_new_user(self, user_id, username, password):
-        self.write_db.insert_new_user(user_id, username, password)
-
-    #this function is not functional
-    def retrieve_all_users(self):
-        return self.read_db.retrieve_users()
-    
-    def fetch_user_id(self, username):
-        return self.read_db.fetch_user_id(username)
-=======
 
 # Write_db methods
     def insert_new_user(self, username, userid, password):
         self.write_db.insert_new_user(username, userid, password)
->>>>>>> main
     
     def insert_plan(self, plan):
         self.write_db.insert_plan(plan)

@@ -10,13 +10,14 @@ from PyQt5 import uic
 from PyQt5.QtCore import *
 from controller.controller import Controller 
 
-class UI_kalender_window(QWidget):
+class UI_kalender_window(QMainWindow):
     signal_object = pyqtSignal()
 
     def __init__(self, parent=None, user_id=None):
         super(UI_kalender_window, self).__init__()
         ui_file_path = "view/uifiles/kalender.ui"
         uic.loadUi(ui_file_path, self)
+        self.controller = Controller()
         self.user_id = user_id
         self.btn_savechanges = self.findChild(QPushButton, "btn_savechanges")
         self.btn_addnew = self.findChild(QPushButton, "btn_addnew")
@@ -27,7 +28,7 @@ class UI_kalender_window(QWidget):
         self.updateTaskList()
         self.btn_savechanges.clicked.connect(self.savechanges)
         self.selected_date = None
-        self.controller = Controller()
+        
 
     def calendarDatechanged(self):
         self.selected_date = self.dsip_kalender.selectedDate()
@@ -46,8 +47,3 @@ class UI_kalender_window(QWidget):
             self.tasklist.addItem(plan)
         
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = UI_kalender_window()
-    window.show()
-    app.exec_()
