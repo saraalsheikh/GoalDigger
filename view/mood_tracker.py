@@ -14,7 +14,7 @@ class MoodTrackerApp(QMainWindow):
     signal_object = pyqtSignal()
     
 
-    def __init__(self, user_id):
+    def __init__(self, parent=None, user_id=None):
         super(MoodTrackerApp, self).__init__()
         uic.loadUi("view/uifiles/mood_tracker_window.ui", self)
         self.user_id = user_id
@@ -43,7 +43,7 @@ class MoodTrackerApp(QMainWindow):
         self.signal_object.emit()
         self.close()
 
-        
+
 
 
 if __name__ == "__main__":

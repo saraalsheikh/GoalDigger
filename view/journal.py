@@ -7,7 +7,8 @@ from PyQt5.QtCore import *
 
 class UI_journal_window(QMainWindow):    
     signal_object = pyqtSignal()
-    def __init__(self):
+    def __init__(self, parent=None, user_id=None):
+        self.user_id=user_id
         super(UI_journal_window, self).__init__()
         ui_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uifiles/journal_window.ui'))
         uic.loadUi(ui_file_path, self)

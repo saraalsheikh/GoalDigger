@@ -11,7 +11,7 @@ class Write_db():
             self.mydb = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="uqTjt8dc",
+                password="root",
                 database="GoalDigger"
             )
         except mysql.connector.Error as err:
@@ -26,9 +26,10 @@ class Write_db():
         self.mycursor.close()
         self.mydb.close()
 
-    def insert_new_user(self, username, userid, password):
+    def insert_new_user(self, user_id, username, password):
+        print(user_id)
         self.open_db()
-        self.mycursor.execute(f"INSERT INTO user_info (user_id, user_name,password) Values('{userid}', '{username}', '{password}')")
+        self.mycursor.execute(f"INSERT INTO user_info (user_id, user_name, password) Values('{user_id}', '{username}', '{password}')")
         self.mydb.commit()
         self.close_db()
 

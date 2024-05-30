@@ -7,8 +7,8 @@ class Controller:
         self.write_db = Write_db()
         self.read_db = Read_db()
 
-    def insert_new_user(self, username, userid, password):
-        self.write_db.insert_new_user(username, userid, password)
+    def insert_new_user(self, user_id, username, password):
+        self.write_db.insert_new_user(user_id, username, password)
 
     #this function is not functional
     def retrieve_all_users(self):

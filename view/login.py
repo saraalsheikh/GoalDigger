@@ -22,7 +22,7 @@ class UI_login_window(QMainWindow):
         self.btn_welcome = self.findChild(QPushButton, "btn_welcome")
         self.txt_username = self.findChild(QLineEdit, "txt_username")
         self.txt_password = self.findChild(QLineEdit, "txt_password")
-        self.error = self.find(QLabel, "error")
+        self.error = self.findChild(QLabel, "error")
 
         # Code that hides the password
         self.txt_password.setEchoMode(QLineEdit.Password)
@@ -39,15 +39,19 @@ class UI_login_window(QMainWindow):
 
         if len(username) == 0 or len(password) == 0:
             self.error.setText("Please fill in the empty boxes.")
+            return
         authenticate_user=self.controller.authenticate_user(username, password)
+        print(authenticate_user)
         if authenticate_user:
             userid = self.controller.fetch_user_id(username)
             self.home_page = HomePage(userid)
-            self.home_page.signal_login.connect(self.show)
+            self.home_page.signal_object.connect(self.show)
             self.close()
             self.home_page.show()
         else:
-            pass
+            self.error.setText("Wrong password or username please try again.")
+            self.txt_username.clear()
+            self.txt_password.clear()  # .settext("") if clear does not work 
 
 
     def welcomefunction(self):

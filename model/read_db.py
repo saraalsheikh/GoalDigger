@@ -9,7 +9,7 @@ class Read_db:
             self.mydb = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="uqTjt8dc",
+                password="root",
                 database="GoalDigger",
             )
         except mysql.connector.Error as err:
@@ -56,7 +56,7 @@ class Read_db:
         self.open_db()
         
         # Prepare the query to get the user_id based on the username
-        query = "SELECT user_id FROM user_info WHERE username = %s;"
+        query = "SELECT user_id FROM user_info WHERE user_name = %s;"
         
         # Execute the query with the provided username
         self.mycursor.execute(query, (username,))
@@ -76,17 +76,12 @@ class Read_db:
     
     def authenticate_user(self, username, password):
         self.open_db()
-        query = "SELECT * FROM user_info WHERE username = %s AND password = %s;"
-        self.mycursor.execute(query, (username, password))
+        self.mycursor.execute(f"SELECT * FROM user_info WHERE user_name = '{username}' AND password = '{password}';")
         self.list_of_tuples = self.mycursor.fetchall()
-        user_info_list = []
-        for tuple in self.list_of_tuples:
-         user_info_list.append(str(tuple[0]))  # user_id
-         user_info_list.append(str(tuple[1]))  # username
-         user_info_list.append(str(tuple[2]))  # password (should not normally return this)
+        
         self.close_db()
 
-        if user_info_list == []:
+        if self.list_of_tuples == []:
           return False
         else:
           return True

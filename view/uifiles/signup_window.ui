@@ -37,7 +37,7 @@ color:#803CE0;</string>
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txt_username">
+   <widget class="QLineEdit" name="txt_user_id">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -67,7 +67,7 @@ QLineEdit:focus {
      <string/>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txt_userid">
+   <widget class="QLineEdit" name="txt_user_name">
     <property name="geometry">
      <rect>
       <x>160</x>
