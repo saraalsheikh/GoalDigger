@@ -20,7 +20,7 @@ y2:0.982955, stop:0 rgba(128, 60, 224, 255), stop:1 rgba(255, 255, 255, 255));}<
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="1">
+    <item row="0" column="1">
      <widget class="QWidget" name="widget_mooddisplay" native="true">
       <property name="styleSheet">
        <string notr="true">QWidget#widget_mooddisplay{
@@ -28,178 +28,7 @@ background-color: qlineargradient(spread:pad, x1:0.0795455, y1:0.079, x2:0.96,
 y2:0.982955, stop:0 rgba(128, 60, 224, 255), stop:1 rgba(255, 255, 255, 255));}</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" colspan="5">
-        <widget class="QLabel" name="label">
-         <property name="styleSheet">
-          <string notr="true">font: 24pt &quot;Comic Sans MS&quot;;
-color: white;
-background-color: rgb(128, 60, 224);</string>
-         </property>
-         <property name="text">
-          <string>How are you feeling today?</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="label_3">
-         <property name="styleSheet">
-          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
-color:#803CE0;</string>
-         </property>
-         <property name="text">
-          <string>Nuetral</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignHCenter|Qt::AlignTop</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="label_4">
-         <property name="styleSheet">
-          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
-color:#803CE0;
-</string>
-         </property>
-         <property name="text">
-          <string>Sad</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignHCenter|Qt::AlignTop</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="4">
-        <widget class="QLabel" name="label_6">
-         <property name="styleSheet">
-          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
-color:#803CE0;</string>
-         </property>
-         <property name="text">
-          <string>Very Happy</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignHCenter|Qt::AlignTop</set>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="3">
-        <widget class="QLabel" name="label_5">
-         <property name="styleSheet">
-          <string notr="true">font: 75 8pt &quot;Comic Sans MS&quot;;
-color:#803CE0;</string>
-         </property>
-         <property name="text">
-          <string>Very Sad</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignHCenter|Qt::AlignTop</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="btn_veryhappy">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-	
-	background-color: rgb(128, 60, 224);
-	border-radius:10px;
-	font: 10pt, Arial;
-	color: white;
-
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(193, 81, 241);
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../../../grinning-face.svg</normaloff>../../../grinning-face.svg</iconset>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QPushButton" name="btn_verysad">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-	
-	background-color: rgb(128, 60, 224);
-	border-radius:10px;
-	font: 10pt, Arial;
-	color: white;
-
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(193, 81, 241);
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../../../crying-face.svg</normaloff>../../../crying-face.svg</iconset>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="btn_nuetral">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-	
-	background-color: rgb(128, 60, 224);
-	border-radius:10px;
-	font: 10pt, Arial;
-	color: white;
-
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(193, 81, 241);
-
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../../../neutral-face.svg</normaloff>../../../neutral-face.svg</iconset>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4">
         <widget class="QPushButton" name="btn_sad">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -232,21 +61,73 @@ QPushButton:hover{
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_2">
+       <item row="2" column="6">
+        <widget class="QPushButton" name="btn_veryhappy">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="styleSheet">
-          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
-color:#803CE0;</string>
+          <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
          </property>
          <property name="text">
-          <string>Happy</string>
+          <string/>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../grinning-face.svg</normaloff>../../../grinning-face.svg</iconset>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btn_verysad">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../crying-face.svg</normaloff>../../../crying-face.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5">
         <widget class="QPushButton" name="btn_happy">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -276,6 +157,125 @@ QPushButton:hover{
          <property name="icon">
           <iconset>
            <normaloff>../../../smiling-face-with-smiling-eyes.svg</normaloff>../../../smiling-face-with-smiling-eyes.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="label_5">
+         <property name="styleSheet">
+          <string notr="true">font: 75 8pt &quot;Comic Sans MS&quot;;
+color:#803CE0;</string>
+         </property>
+         <property name="text">
+          <string>Very Sad</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QPushButton" name="btn_nuetral">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../neutral-face.svg</normaloff>../../../neutral-face.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="7">
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">font: 24pt &quot;Comic Sans MS&quot;;
+color: white;
+background-color: rgb(128, 60, 224);</string>
+         </property>
+         <property name="text">
+          <string>How are you feeling today?</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_4">
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
+color:#803CE0;
+</string>
+         </property>
+         <property name="text">
+          <string>Sad</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
+color:#803CE0;</string>
+         </property>
+         <property name="text">
+          <string>Nuetral</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="5">
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
+color:#803CE0;</string>
+         </property>
+         <property name="text">
+          <string>Happy</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="6">
+        <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;Comic Sans MS&quot;;
+color:#803CE0;</string>
+         </property>
+         <property name="text">
+          <string>Very Happy</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
          </property>
         </widget>
        </item>

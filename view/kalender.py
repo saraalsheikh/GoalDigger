@@ -11,6 +11,8 @@ from PyQt5.QtCore import *
 from controller.controller import Controller 
 
 class UI_kalender_window(QWidget):
+    signal_object = pyqtSignal()
+
     def __init__(self, user_id):
         super(UI_kalender_window, self).__init__()
         ui_file_path = "view/uifiles/kalender.ui"
