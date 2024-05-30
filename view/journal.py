@@ -9,7 +9,7 @@ class UI_journal_window(QMainWindow):
     signal_object = pyqtSignal()
     def __init__(self, parent=None, user_id=None):
         self.user_id=user_id
-        super(UI_journal_window, self).__init__()
+        super(UI_journal_window, self).__init__(parent)
         ui_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uifiles/journal_window.ui'))
         uic.loadUi(ui_file_path, self)
 
@@ -19,6 +19,9 @@ class UI_journal_window(QMainWindow):
 
         # Finding the necessary widgets in the ui file
         self.txt_box = self.findChild(QTextEdit, "txt_box")  # Assuming the QTextEdit is named txt_box in the UI
+
+        # button objects
+        self.btn_home_page = self.findChild(QPushButton, "btn_home_page")
 
         # Initializing actions
         self.action_new = self.findChild(QAction, "action_new")
@@ -49,6 +52,7 @@ class UI_journal_window(QMainWindow):
         self.action_set_light_mode.triggered.connect(self.setLightMode)
         self.action_increase_font_size.triggered.connect(self.incFontSize)
         self.action_decrease_font_size.triggered.connect(self.decFontSize)
+        self.btn_home_page.clicked.connect(self.btn_home_page_function)
 
     def newFile(self):
         self.txt_box.clear()
@@ -134,6 +138,10 @@ class UI_journal_window(QMainWindow):
         self.current_fontsize -= 1
         self.txt_box.setFontPointSize(self.current_fontsize)
         print("Decrease font size clicked")
+
+    def btn_home_page_function(self):
+        self.signal_object.emit()
+        self.close()
 
 
 if __name__ == "__main__":

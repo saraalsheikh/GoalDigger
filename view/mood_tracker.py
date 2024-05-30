@@ -15,7 +15,7 @@ class MoodTrackerApp(QMainWindow):
     
 
     def __init__(self, parent=None, user_id=None):
-        super(MoodTrackerApp, self).__init__()
+        super(MoodTrackerApp, self).__init__(parent)
         uic.loadUi("view/uifiles/mood_tracker_window.ui", self)
         self.user_id = user_id
 
@@ -25,6 +25,9 @@ class MoodTrackerApp(QMainWindow):
         self.sad_clicked = self.findChild(QPushButton, "btn_sad")
         self.verysad_clicked = self.findChild(QPushButton, "btn_verysad")
         self.veryhappy_clicked = self.findChild(QPushButton, "btn_veryhappy")
+        self.btn_home_page = self.findChild(QPushButton, "btn_home_page")
+        self.btn_home_page.clicked.connect(self.btn_home_page_function)
+        
 
         # connect buttons to functions
         self.happy_clicked.clicked.connect(lambda: self.save_mood(4))
@@ -38,8 +41,13 @@ class MoodTrackerApp(QMainWindow):
 
     def save_mood(self, mood):
         current_datetime = datetime.now()
+        # current_datetime1 = current_datetime.toString("yyyy-MM-dd")
         self.user_mood = mood
         self.controller.insert_mood(self.user_mood, self.user_id, current_datetime)
+        self.signal_object.emit()
+        self.close()
+
+    def btn_home_page_function(self):
         self.signal_object.emit()
         self.close()
 

@@ -82,15 +82,13 @@ class Read_db:
     
     def fetch_plans(self, user_id):
         self.open_db()
-        self.mycursor.execute(f"SELECT * FROM to_do_list WHERE user_id = '{user_id}';")
+        self.mycursor.execute(f"SELECT plan_date, plan_text FROM to_do_list WHERE user_id = '{user_id}';")
         self.list_of_tuples = self.mycursor.fetchall()
     
         user_plans_list = []
-        for tuple in self.list_of_tuples:
-          plan_date=tuple[2]
-          plan_text=tuple[3]
-          plan=plan_date + " " + plan_text
-          user_plans_list.append(plan)
+        for (plan_date, plan_text) in self.list_of_tuples:
+            formatted_plan = str(plan_date) + " " + plan_text  # Convert date to string
+            user_plans_list.append(formatted_plan)
         self.close_db()
     
         return user_plans_list

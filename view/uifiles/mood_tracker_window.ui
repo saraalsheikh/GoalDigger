@@ -57,7 +57,7 @@ QPushButton:hover{
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../slightly-frowning-face.svg</normaloff>../../../slightly-frowning-face.svg</iconset>
+           <normaloff>../pics/slightly-frowning-face.svg</normaloff>../pics/slightly-frowning-face.svg</iconset>
          </property>
         </widget>
        </item>
@@ -90,7 +90,7 @@ QPushButton:hover{
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../grinning-face.svg</normaloff>../../../grinning-face.svg</iconset>
+           <normaloff>../pics/grinning-face.svg</normaloff>../pics/grinning-face.svg</iconset>
          </property>
         </widget>
        </item>
@@ -137,7 +137,7 @@ QPushButton:hover{
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../crying-face.svg</normaloff>../../../crying-face.svg</iconset>
+           <normaloff>../pics/crying-face.svg</normaloff>../pics/crying-face.svg</iconset>
          </property>
         </widget>
        </item>
@@ -170,7 +170,7 @@ QPushButton:hover{
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../smiling-face-with-smiling-eyes.svg</normaloff>../../../smiling-face-with-smiling-eyes.svg</iconset>
+           <normaloff>../pics/smiling-face-with-smiling-eyes.svg</normaloff>../pics/smiling-face-with-smiling-eyes.svg</iconset>
          </property>
         </widget>
        </item>
@@ -246,7 +246,7 @@ QPushButton:hover{
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../neutral-face.svg</normaloff>../../../neutral-face.svg</iconset>
+           <normaloff>../pics/neutral-face.svg</normaloff>../pics/neutral-face.svg</iconset>
          </property>
         </widget>
        </item>
@@ -280,6 +280,13 @@ background-color: rgb(128, 60, 224);</string>
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="btn_home_page">
+      <property name="text">
+       <string>Home page</string>
+      </property>
      </widget>
     </item>
    </layout>

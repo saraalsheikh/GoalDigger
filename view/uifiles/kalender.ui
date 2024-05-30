@@ -92,6 +92,19 @@ font: 10pt;</string>
      </rect>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_home_page">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>586</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Home page</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -99,7 +112,7 @@ font: 10pt;</string>
      <x>0</x>
      <y>0</y>
      <width>878</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

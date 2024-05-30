@@ -30,7 +30,8 @@ class UI_login_window(QMainWindow):
 
         self.btn_login.clicked.connect(self.loginfunction)
         self.btn_welcome.clicked.connect(self.welcomefunction) 
-        self.error.setText("")       
+        self.error.setText("")
+         
 
 
     def loginfunction(self):
@@ -45,7 +46,9 @@ class UI_login_window(QMainWindow):
         print(authenticate_user)
         if authenticate_user:
             userid = self.controller.fetch_user_id(username)
-            self.home_page = HomePage(userid)
+            self.txt_username.setText("")
+            self.txt_password.setText("")
+            self.home_page = HomePage(self, userid)
             self.home_page.signal_object.connect(self.show)
             self.close()
             self.home_page.show()
