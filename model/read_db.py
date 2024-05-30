@@ -50,7 +50,25 @@ class Read_db:
             return True
         return  False
     
-
-    #this function is not functional
-    def retrieve_users(self, user_id):
-        return "users_list"
+    
+    def fetch_user_id(self, username):
+        # Open the database connection
+        self.open_db()
+        
+        # Prepare the query to get the user_id based on the username
+        query = "SELECT user_id FROM user_info WHERE username = %s;"
+        
+        # Execute the query with the provided username
+        self.mycursor.execute(query, (username,))
+        
+        # Fetch the result
+        user_id_tuple = self.mycursor.fetchone()
+        
+        # Close the database connection
+        self.close_db()
+        
+        # Check if a result was found and return the user_id, otherwise return None
+        if user_id_tuple:
+            return str(user_id_tuple[0])
+        else:
+            return None
