@@ -8,6 +8,7 @@ from PyQt5 import uic
 from PyQt5.QtCore import *
 from view.signup import UI_signup_window
 
+
 class UI_login_window(QMainWindow):
     signal_login = pyqtSignal()
 
