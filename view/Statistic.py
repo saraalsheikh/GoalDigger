@@ -25,14 +25,16 @@ class UI_Statistic_window(QMainWindow):
         self.list = self.findChild(QListWidget, "listWidget")
 
         self.btn_show.clicked.connect(self.showstat)
-        self.list.clicked.connect(self.updateTaskList)
+        self.list.clicked.connect(self.updateList)
 
         self.controller = Controller()
 
     def showstat(self):
         
-        moods = [moods]
-        days = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"]
+        moods = self.controller.retrieve_mood()
+        days = self.controller.retrieve_date()
+
+        self.list.clear()
 
         for i in range(len(moods)):
             item = "{}: {}".format(days[i], moods[i])
@@ -42,7 +44,7 @@ class UI_Statistic_window(QMainWindow):
         average_mood = sum(moods) / len(moods)
         self.list.addItem("This is your average mood: {:.2f}".format(average_mood))
 
-    def updateTaskList(self):
+    def updatList(self):
         pass
 
 
