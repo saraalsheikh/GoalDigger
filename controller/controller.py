@@ -13,3 +13,12 @@ class Controller:
     #this function is not functional
     def retrieve_all_users(self):
         return self.read_db.retrieve_users()
+    
+    def fetch_user_id(self, username):
+        return self.read_db.fetch_user_id(username)
+    
+    def insert_plan(self, plan):
+        self.write_db.insert_plan(plan)
+    
+    
+        

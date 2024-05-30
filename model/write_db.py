@@ -31,3 +31,14 @@ class Write_db():
         self.mycursor.execute(f"INSERT INTO user_info (user_id, user_name,password) Values('{userid}', '{username}', '{password}')")
         self.mydb.commit()
         self.close_db()
+
+    def insert_plan(self, plan):
+      plan_text = plan[0]
+      plan_date = plan[1]
+      user_id = plan[2]
+      self.open_db()
+      query = "INSERT INTO plans (plan_id, user_id, plan_text, plan_date) VALUES (%s, %s, %s, %s)"
+      self.mycursor.execute(query, (user_id, plan_text, plan_date))
+    # Commit the transaction to the database
+      self.mydb.commit()
+      self.close_db()
