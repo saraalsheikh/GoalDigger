@@ -72,3 +72,21 @@ class Read_db:
             return str(user_id_tuple[0])
         else:
             return None
+    
+    
+    def authenticate_user(self, username, password):
+        self.open_db()
+        query = "SELECT * FROM user_info WHERE username = %s AND password = %s;"
+        self.mycursor.execute(query, (username, password))
+        self.list_of_tuples = self.mycursor.fetchall()
+        user_info_list = []
+        for tuple in self.list_of_tuples:
+         user_info_list.append(str(tuple[0]))  # user_id
+         user_info_list.append(str(tuple[1]))  # username
+         user_info_list.append(str(tuple[2]))  # password (should not normally return this)
+        self.close_db()
+
+        if user_info_list == []:
+          return False
+        else:
+          return True

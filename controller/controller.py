@@ -20,5 +20,5 @@ class Controller:
     def insert_plan(self, plan):
         self.write_db.insert_plan(plan)
     
-    
-        
+    def authenticate_user(self, username, password):
+        return self.read_db.authenticate_user (username, password)
