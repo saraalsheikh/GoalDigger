@@ -10,6 +10,7 @@ from view.signup import UI_signup_window
 from controller.controller import Controller
 from view.main_page import HomePage
 
+
 class UI_login_window(QMainWindow):
     signal_login = pyqtSignal()
 

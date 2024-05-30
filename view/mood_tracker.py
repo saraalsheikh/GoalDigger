@@ -43,7 +43,10 @@ class MoodTrackerApp(QMainWindow):
         self.signal_object.emit()
         self.close()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 
 
 if __name__ == "__main__":

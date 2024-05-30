@@ -40,6 +40,13 @@ class Write_db():
       self.open_db()
       query = "INSERT INTO plans (plan_id, user_id, plan_text, plan_date) VALUES (%s, %s, %s, %s)"
       self.mycursor.execute(query, (user_id, plan_text, plan_date))
-    # Commit the transaction to the database
       self.mydb.commit()
       self.close_db()
+    
+
+    def insert_mood(self, user_mood, user_id, current_datetime):
+        self.open_db()
+        query = "INSERT INTO moods (user_id, user_mood, current_datetime) VALUES (%s, %s, %s)"
+        self.mycursor.execute(query, (user_id, user_mood, current_datetime))
+        self.mydb.commit()
+        self.close_db()
