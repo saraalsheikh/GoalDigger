@@ -52,22 +52,12 @@ class Read_db:
     
     
     def fetch_user_id(self, username):
-        # Open the database connection
         self.open_db()
-        
-        # Prepare the query to get the user_id based on the username
         query = "SELECT user_id FROM user_info WHERE username = %s;"
-        
-        # Execute the query with the provided username
         self.mycursor.execute(query, (username,))
-        
-        # Fetch the result
         user_id_tuple = self.mycursor.fetchone()
-        
-        # Close the database connection
         self.close_db()
         
-        # Check if a result was found and return the user_id, otherwise return None
         if user_id_tuple:
             return str(user_id_tuple[0])
         else:
@@ -90,3 +80,20 @@ class Read_db:
           return False
         else:
           return True
+    
+    def fetch_plans(self, user_id):
+        self.open_db()
+        query = f"SELECT * FROM plans WHERE user_id = '{user_id}';"
+        self.mycursor.execute(query)
+        self.list_of_tuples = self.mycursor.fetchall()
+    
+        user_plans_list = []
+        for tuple in self.list_of_tuples:
+          plan_date=tuple[2]
+          plan_text=tuple[3]
+          plan=plan_date + " " + plan_text
+          user_plans_list.append(plan)
+        self.close_db()
+    
+        return user_plans_list
+

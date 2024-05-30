@@ -43,7 +43,7 @@ class UI_login_window(QMainWindow):
         if authenticate_user:
             userid = self.controller.fetch_user_id(username)
             self.home_page = HomePage(userid)
-            self.home_page.signal_login.connect(self.show)
+            self.home_page.signal_object.connect(self.show)
             self.close()
             self.home_page.show()
         else:
