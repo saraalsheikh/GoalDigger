@@ -24,10 +24,10 @@ class UI_signup_window(QMainWindow):
    
     # Finding the necessary widgets in the UI file
     self.btn_signup = self.findChild(QPushButton, "btn_signup")
-    self.txt_username = self.findChild(QLineEdit, "txt_username")
+    self.txt_username = self.findChild(QLineEdit, "txt_user_name")
     self.txt_password = self.findChild(QLineEdit, "txt_password")
     self.txt_confirm_password = self.findChild(QLineEdit, "txt_confirm_password")
-    self.txt_userid = self.findChild(QLineEdit, "txt_userid")
+    self.txt_userid = self.findChild(QLineEdit, "txt_user_id")
     self.btn_welcome = self.findChild(QPushButton, "btn_welcome")
     self.btn_welcome.clicked.connect(self.welcomefunction)
 
@@ -38,7 +38,7 @@ class UI_signup_window(QMainWindow):
     self.txt_confirm_password.setEchoMode(QLineEdit.Password)
 
     # Connect the signup button to the signup function
-    #self.btn_signup.clicked.connect(self.signupfunction)
+    self.btn_signup.clicked.connect(self.signupfunction)
 
     
 
@@ -49,7 +49,7 @@ class UI_signup_window(QMainWindow):
     username = self.txt_username.text()
     user_id = self.txt_userid.text()
     password = self.txt_password.text()
-    self.controller.insert_new_user(username, user_id, password)
+    self.controller.insert_new_user(user_id, username, password)
     self.signal_object.emit()
     self.close()
   

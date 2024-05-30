@@ -1,170 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainPage</class>
- <widget class="QWidget" name="MainPage">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>428</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Main Page</string>
+   <string>MainWindow</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_journal">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
-	
-	background-color: rgb(128, 60, 224);
-	border-radius:10px;
-    padding: 10px;
-    border-radius: 10px;
-	font: 10pt, Arial;
-	color: white;
-
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(193, 81, 241);
-}</string>
-     </property>
-     <property name="text">
-      <string>Journal</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_calender">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
-	
-	background-color: rgb(128, 60, 224);
-	border-radius:10px;
-    padding: 10px;
-    border-radius: 10px;
-	font: 10pt, Arial;
-	color: white;
-
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(193, 81, 241);
-}</string>
-     </property>
-     <property name="text">
-      <string>Calendar</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_moodtracker">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
-	
-	background-color: rgb(128, 60, 224);
-	border-radius:10px;
-    padding: 10px;
-    border-radius: 10px;
-	font: 10pt, Arial;
-	color: white;
-
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(193, 81, 241);
-}</string>
-     </property>
-     <property name="text">
-      <string>Mood Tracker</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_logout">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: rgb(220, 20, 60);
-    font: 14pt &quot;Arial&quot;;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-}
-QPushButton:hover {
-    background-color: rgb(255, 69, 0);
-}</string>
-     </property>
-     <property name="text">
-      <string>Log Out</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_journal">
+    <property name="geometry">
+     <rect>
+      <x>124</x>
+      <y>82</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>journal</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_calender">
+    <property name="geometry">
+     <rect>
+      <x>124</x>
+      <y>132</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>calender</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_mode_tracker">
+    <property name="geometry">
+     <rect>
+      <x>144</x>
+      <y>202</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>mode tracker</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_logout">
+    <property name="geometry">
+     <rect>
+      <x>114</x>
+      <y>270</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>logout</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
