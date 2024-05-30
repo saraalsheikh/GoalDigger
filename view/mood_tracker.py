@@ -15,7 +15,8 @@ import sys
 # from view.mood_tracker import MoodTrackerApp
 
 class MoodTrackerApp(QMainWindow):
-    def __init__(self):
+    def __init__(self, user_id):
+        self.user_id = user_id
         super(MoodTrackerApp, self).__init__()
         uic.loadUi("view/uifiles/mood_tracker_window.ui", self)
 
@@ -33,14 +34,15 @@ class MoodTrackerApp(QMainWindow):
         self.verysad_clicked.clicked.connect(lambda: self.save_mood("very sad"))
         self.veryhappy_clicked.clicked.connect(lambda: self.save_mood("very happy"))
 
-    #     # establish database connection
-    #     self.conn = mysql.connector.connect(
-    #         host='localhost',
-    #         user='your_username',
-    #         password='your_password',
-    #         database='your_database'
-    #     )
-    #     self.cursor = self.conn.cursor()
+    def savemood(self):
+        statistic = [self.user_id]
+
+
+    def mood(self):
+        if 
+
+
+       
 
     # @pyqtSlot()
     # def save_mood(self, mood):
@@ -49,10 +51,10 @@ class MoodTrackerApp(QMainWindow):
     #     self.conn.commit()
     #     print(f"Mood '{mood}' saved to database.")
 
-    # def closeEvent(self, event):
-    #     self.cursor.close()
-    #     self.conn.close()
-    #     event.accept()
+    def closeEvent(self, event):
+        self.cursor.close()
+        self.conn.close()
+        event.accept()
 
 
 if __name__ == "__main__":
