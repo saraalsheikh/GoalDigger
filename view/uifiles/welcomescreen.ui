@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>867</width>
-    <height>532</height>
+    <width>502</width>
+    <height>593</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,40 +17,23 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
-     <width>881</width>
-     <height>531</height>
+     <y>-10</y>
+     <width>911</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QWidget#bgwidget{
 background-color: qlineargradient(spread:pad, x1:0.0795455, y1:0.079, x2:0.96, 
-y2:0.982955, stop:0 rgba(128, 60, 224, 255), stop:1 rgba(255, 255, 255, 255));}</string>
+y2:0.982955, stop:0 rgba(128, 60, 224, 255), stop:1 rgba(255, 255, 255, 255));}
+
+</string>
    </property>
-   <widget class="QLabel" name="welcome">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>60</y>
-      <width>501</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 28pt &quot;Comic Sans MS&quot;; color: rgb(225, 225, 255)</string>
-    </property>
-    <property name="text">
-     <string>Welcome!</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="signinorlogin">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>190</y>
+      <x>-10</x>
+      <y>360</y>
       <width>541</width>
       <height>41</height>
      </rect>
@@ -68,8 +51,8 @@ y2:0.982955, stop:0 rgba(128, 60, 224, 255), stop:1 rgba(255, 255, 255, 255));}<
    <widget class="QPushButton" name="btn_login_welcome">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>260</y>
+      <x>170</x>
+      <y>280</y>
       <width>171</width>
       <height>23</height>
      </rect>
@@ -97,8 +80,8 @@ QPushButton:hover{
    <widget class="QPushButton" name="btn_signup_welcome">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>310</y>
+      <x>170</x>
+      <y>320</y>
       <width>171</width>
       <height>21</height>
      </rect>
@@ -123,6 +106,29 @@ QPushButton:hover{
      <string>Sign up</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>511</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../123.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>signinorlogin</zorder>
+   <zorder>btn_login_welcome</zorder>
+   <zorder>btn_signup_welcome</zorder>
   </widget>
  </widget>
  <resources/>
