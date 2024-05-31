@@ -17,11 +17,27 @@
    <widget class="QPushButton" name="btn_journal">
     <property name="geometry">
      <rect>
-      <x>124</x>
-      <y>82</y>
+      <x>290</x>
+      <y>190</y>
       <width>181</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
     </property>
     <property name="text">
      <string>journal</string>
@@ -30,11 +46,27 @@
    <widget class="QPushButton" name="btn_calender">
     <property name="geometry">
      <rect>
-      <x>124</x>
-      <y>132</y>
+      <x>290</x>
+      <y>230</y>
       <width>181</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
     </property>
     <property name="text">
      <string>calender</string>
@@ -43,11 +75,27 @@
    <widget class="QPushButton" name="btn_mode_tracker">
     <property name="geometry">
      <rect>
-      <x>144</x>
-      <y>202</y>
-      <width>151</width>
-      <height>31</height>
+      <x>290</x>
+      <y>270</y>
+      <width>181</width>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
     </property>
     <property name="text">
      <string>mode tracker</string>
@@ -56,11 +104,27 @@
    <widget class="QPushButton" name="btn_logout">
     <property name="geometry">
      <rect>
-      <x>114</x>
-      <y>270</y>
+      <x>290</x>
+      <y>310</y>
       <width>181</width>
-      <height>51</height>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
     </property>
     <property name="text">
      <string>logout</string>
@@ -69,14 +133,51 @@
    <widget class="QPushButton" name="btn_statistic">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>40</y>
-      <width>191</width>
+      <x>290</x>
+      <y>150</y>
+      <width>181</width>
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
+    </property>
     <property name="text">
      <string>statistic</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>3</y>
+      <width>791</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 24pt &quot;Comic Sans MS&quot;;
+color: white;
+background-color: rgb(128, 60, 224);</string>
+    </property>
+    <property name="text">
+     <string>Home Page</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
