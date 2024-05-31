@@ -11,7 +11,7 @@ class Write_db():
             self.mydb = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="uqTjt8dc",
+                password="",
                 database="GoalDigger"
             )
         except mysql.connector.Error as err:
