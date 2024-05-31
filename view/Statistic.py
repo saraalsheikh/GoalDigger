@@ -14,39 +14,35 @@ from controller.controller import Controller
 
 
 class UI_Statistic_window(QMainWindow):
-    signal_login = pyqtSignal()
+    signal_object = pyqtSignal()
 
-    def __init__(self, user_id):
-        super(UI_Statistic_window, self).__init__()
+    def __init__(self,  parent=None, user_id=None):
+        super(UI_Statistic_window, self).__init__(parent)
         uic.loadUi("view/uifiles/Statistic.ui", self)
 
         # Finding Widgets
         self.btn_show = self.findChild(QPushButton, "btn_show")
         self.list = self.findChild(QListWidget, "listWidget")
+        self.user_id = user_id
 
-        self.btn_show.clicked.connect(self.showstat)
-        self.list.clicked.connect(self.updateList)
+        self.btn_show.clicked.connect(self.btn_show_function)
 
         self.controller = Controller()
+        self.showstat()
 
     def showstat(self):
         
-        moods = self.controller.retrieve_mood()
-        days = self.controller.retrieve_date()
+        moods = self.controller.fetch_mood(self.user_id)
+        
 
         self.list.clear()
 
-        for i in range(len(moods)):
-            item = "{}: {}".format(days[i], moods[i])
-            self.list.addItem(item)
+        for mood in moods:
+            self.list.addItem(mood)
 
-
-        average_mood = sum(moods) / len(moods)
-        self.list.addItem("This is your average mood: {:.2f}".format(average_mood))
-
-    def updatList(self):
-        pass
-
+    def btn_show_function(self):
+        self.signal_object.emit()
+        self.close()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

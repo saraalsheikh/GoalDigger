@@ -11,17 +11,11 @@ from datetime import datetime
 # from view.mood_tracker import MoodTrackerApp
 
 class MoodTrackerApp(QMainWindow):
-<<<<<<< HEAD
-    def __init__(self, user_id):
-        self.user_id = user_id
-        super(MoodTrackerApp, self).__init__()
-=======
     signal_object = pyqtSignal()
     
 
     def __init__(self, parent=None, user_id=None):
         super(MoodTrackerApp, self).__init__(parent)
->>>>>>> main
         uic.loadUi("view/uifiles/mood_tracker_window.ui", self)
         self.user_id = user_id
 
@@ -42,20 +36,8 @@ class MoodTrackerApp(QMainWindow):
         self.verysad_clicked.clicked.connect(lambda: self.save_mood(1))
         self.veryhappy_clicked.clicked.connect(lambda: self.save_mood(5))
 
-<<<<<<< HEAD
-    def savemood(self):
-        statistic = [self.user_id]
-
-
-    def mood(self):
-        if 
-
-
-       
-=======
         self.user_mood = None
         self.controller = Controller()
->>>>>>> main
 
     def save_mood(self, mood):
         current_datetime = datetime.now()
@@ -69,13 +51,6 @@ class MoodTrackerApp(QMainWindow):
         self.signal_object.emit()
         self.close()
 
-<<<<<<< HEAD
-    def closeEvent(self, event):
-        self.cursor.close()
-        self.conn.close()
-        event.accept()
-=======
->>>>>>> main
 
 
 if __name__ == "__main__":

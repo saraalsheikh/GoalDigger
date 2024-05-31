@@ -28,3 +28,6 @@ class Controller:
     
     def fetch_plans(self, user_id): 
         return self.read_db.fetch_plans(user_id)
+    
+    def fetch_mood(self, user_id):
+        return self.read_db.fetch_mood(user_id)

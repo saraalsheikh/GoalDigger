@@ -11,7 +11,7 @@ class Write_db():
             self.mydb = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="root",
+                password="",
                 database="GoalDigger"
             )
         except mysql.connector.Error as err:
@@ -33,15 +33,14 @@ class Write_db():
         self.close_db()
 
     def insert_plan(self, plan):
-      plan_text = plan[0]
-      plan_date = plan[1]
-      user_id = plan[2]
-      self.open_db()
-      self.mycursor.execute(f"INSERT INTO to_do_list ( user_id, plan_text, plan_date) VALUES ('{user_id}', '{plan_text}', '{plan_date}')")
-      self.mydb.commit()
-      self.close_db()
+        plan_text = plan[0]
+        plan_date = plan[1]
+        user_id = plan[2]
+        self.open_db()
+        self.mycursor.execute(f"INSERT INTO to_do_list ( user_id, plan_text, plan_date) VALUES ('{user_id}', '{plan_text}', '{plan_date}')")
+        self.mydb.commit()
+        self.close_db()
     
-
     def insert_mood(self, user_mood, user_id, current_datetime):
         self.open_db()
         self.mycursor.execute(f"INSERT INTO mood (user_id, user_mood, mood_date) VALUES ('{user_id}', '{user_mood}', '{current_datetime}')")

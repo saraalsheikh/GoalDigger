@@ -9,6 +9,7 @@ from PyQt5.QtCore import *
 from view.journal import UI_journal_window
 from view.kalender import UI_kalender_window
 from view.mood_tracker import MoodTrackerApp
+from view.Statistic import UI_Statistic_window
 
 
 class HomePage(QMainWindow):
@@ -23,6 +24,8 @@ class HomePage(QMainWindow):
         self.calender_clicked = self.findChild(QPushButton, "btn_calender")
         self.moodtracker_clicked = self.findChild(QPushButton, "btn_mode_tracker")
         self.logout_clicked = self.findChild(QPushButton, "btn_logout")
+        self.btn_statistic = self.findChild(QPushButton,"btn_statistic")
+        self.btn_statistic.clicked.connect(self.btn_statistic_function)
 
 
         # connect buttons to functions
@@ -54,7 +57,15 @@ class HomePage(QMainWindow):
 
     def logoutfunction(self):
         self.signal_object.emit()
-        self.close()       
+        self.close()     
+
+    def btn_statistic_function(self):
+        self.statistic_window = UI_Statistic_window(self, self.user_id)
+        self.statistic_window.signal_object.connect(self.show)
+        self.close()
+        self.statistic_window.show()
+
+
 
 
 # if __name__ == "__main__":

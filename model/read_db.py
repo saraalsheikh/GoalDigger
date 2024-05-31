@@ -9,7 +9,7 @@ class Read_db:
             self.mydb = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="root",
+                password="",
                 database="GoalDigger",
             )
         except mysql.connector.Error as err:
@@ -92,4 +92,18 @@ class Read_db:
         self.close_db()
     
         return user_plans_list
+    
+    def fetch_mood(self, user_id):
+        self.open_db()
+        self.mycursor.execute(f"SELECT user_mood, mood_date FROM mood WHERE user_id = '{user_id}'")
+        self.list_of_tuples = self.mycursor.fetchall()
+    
+        user_moods_list = []
+        for (mood_date, user_mood) in self.list_of_tuples:
+            formatted_mood = str(mood_date) + " " + str(user_mood)  # Convert date to string
+            user_moods_list.append(formatted_mood)
+        self.close_db()
+
+        return user_moods_list
+
 

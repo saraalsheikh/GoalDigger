@@ -46,7 +46,7 @@ QPushButton:hover{
 }</string>
       </property>
       <property name="text">
-       <string>Show Statistic</string>
+       <string>Home Page</string>
       </property>
      </widget>
     </item>
