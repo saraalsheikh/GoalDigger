@@ -1,51 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainPage</class>
- <widget class="QWidget" name="MainPage">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>428</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Main Page</string>
+   <string>MainWindow</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_journal">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_journal">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>190</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
 	
 	background-color: rgb(128, 60, 224);
 	border-radius:10px;
-    padding: 10px;
-    border-radius: 10px;
 	font: 10pt, Arial;
 	color: white;
 
@@ -54,29 +36,27 @@ QPushButton {
 QPushButton:hover{
 	
 	background-color: rgb(193, 81, 241);
+
 }</string>
-     </property>
-     <property name="text">
-      <string>Journal</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_calender">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
+    </property>
+    <property name="text">
+     <string>journal</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_calender">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>230</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
 	
 	background-color: rgb(128, 60, 224);
 	border-radius:10px;
-    padding: 10px;
-    border-radius: 10px;
 	font: 10pt, Arial;
 	color: white;
 
@@ -85,29 +65,27 @@ QPushButton {
 QPushButton:hover{
 	
 	background-color: rgb(193, 81, 241);
+
 }</string>
-     </property>
-     <property name="text">
-      <string>Calendar</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_moodtracker">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
+    </property>
+    <property name="text">
+     <string>calender</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_mode_tracker">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>270</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
 	
 	background-color: rgb(128, 60, 224);
 	border-radius:10px;
-    padding: 10px;
-    border-radius: 10px;
 	font: 10pt, Arial;
 	color: white;
 
@@ -116,55 +94,104 @@ QPushButton {
 QPushButton:hover{
 	
 	background-color: rgb(193, 81, 241);
+
 }</string>
-     </property>
-     <property name="text">
-      <string>Mood Tracker</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_logout">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: rgb(220, 20, 60);
-    font: 14pt &quot;Arial&quot;;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
+    </property>
+    <property name="text">
+     <string>mode tracker</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_logout">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>310</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
 }
-QPushButton:hover {
-    background-color: rgb(255, 69, 0);
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
 }</string>
-     </property>
-     <property name="text">
-      <string>Log Out</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+    </property>
+    <property name="text">
+     <string>logout</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_statistic">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>150</y>
+      <width>181</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	
+	background-color: rgb(128, 60, 224);
+	border-radius:10px;
+	font: 10pt, Arial;
+	color: white;
+
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(193, 81, 241);
+
+}</string>
+    </property>
+    <property name="text">
+     <string>statistic</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>3</y>
+      <width>791</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 24pt &quot;Comic Sans MS&quot;;
+color: white;
+background-color: rgb(128, 60, 224);</string>
+    </property>
+    <property name="text">
+     <string>Home Page</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

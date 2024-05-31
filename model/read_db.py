@@ -53,7 +53,11 @@ class Read_db:
     
     def fetch_user_id(self, username):
         self.open_db()
-        query = "SELECT user_id FROM user_info WHERE username = %s;"
+        
+        # Prepare the query to get the user_id based on the username
+        query = "SELECT user_id FROM user_info WHERE user_name = %s;"
+        
+        # Execute the query with the provided username
         self.mycursor.execute(query, (username,))
         user_id_tuple = self.mycursor.fetchone()
         self.close_db()
@@ -66,34 +70,40 @@ class Read_db:
     
     def authenticate_user(self, username, password):
         self.open_db()
-        query = "SELECT * FROM user_info WHERE username = %s AND password = %s;"
-        self.mycursor.execute(query, (username, password))
+        self.mycursor.execute(f"SELECT * FROM user_info WHERE user_name = '{username}' AND password = '{password}';")
         self.list_of_tuples = self.mycursor.fetchall()
-        user_info_list = []
-        for tuple in self.list_of_tuples:
-         user_info_list.append(str(tuple[0]))  # user_id
-         user_info_list.append(str(tuple[1]))  # username
-         user_info_list.append(str(tuple[2]))  # password (should not normally return this)
+        
         self.close_db()
 
-        if user_info_list == []:
+        if self.list_of_tuples == []:
           return False
         else:
           return True
     
     def fetch_plans(self, user_id):
         self.open_db()
-        query = f"SELECT * FROM plans WHERE user_id = '{user_id}';"
-        self.mycursor.execute(query)
+        self.mycursor.execute(f"SELECT plan_date, plan_text FROM to_do_list WHERE user_id = '{user_id}';")
         self.list_of_tuples = self.mycursor.fetchall()
     
         user_plans_list = []
-        for tuple in self.list_of_tuples:
-          plan_date=tuple[2]
-          plan_text=tuple[3]
-          plan=plan_date + " " + plan_text
-          user_plans_list.append(plan)
+        for (plan_date, plan_text) in self.list_of_tuples:
+            formatted_plan = str(plan_date) + " " + plan_text  # Convert date to string
+            user_plans_list.append(formatted_plan)
         self.close_db()
     
         return user_plans_list
+    
+    def fetch_mood(self, user_id):
+        self.open_db()
+        self.mycursor.execute(f"SELECT user_mood, mood_date FROM mood WHERE user_id = '{user_id}'")
+        self.list_of_tuples = self.mycursor.fetchall()
+    
+        user_moods_list = []
+        for (mood_date, user_mood) in self.list_of_tuples:
+            formatted_mood = str(mood_date) + " " + str(user_mood)  # Convert date to string
+            user_moods_list.append(formatted_mood)
+        self.close_db()
+
+        return user_moods_list
+
 

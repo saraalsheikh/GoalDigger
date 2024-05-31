@@ -9,8 +9,8 @@ class Controller:
 
 
 # Write_db methods
-    def insert_new_user(self, username, userid, password):
-        self.write_db.insert_new_user(username, userid, password)
+    def insert_new_user(self, user_id, username, password):
+        self.write_db.insert_new_user(user_id, username, password)
     
     def insert_plan(self, plan):
         self.write_db.insert_plan(plan)
@@ -28,3 +28,6 @@ class Controller:
     
     def fetch_plans(self, user_id): 
         return self.read_db.fetch_plans(user_id)
+    
+    def fetch_mood(self, user_id):
+        return self.read_db.fetch_mood(user_id)

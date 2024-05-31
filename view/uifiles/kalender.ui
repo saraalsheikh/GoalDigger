@@ -1,66 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>calender_window</class>
+ <widget class="QMainWindow" name="calender_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>538</width>
-    <height>378</height>
+    <width>878</width>
+    <height>685</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>calender</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <widget class="QCalendarWidget" name="dsip_kalender">
-     <property name="styleSheet">
-      <string notr="true">selection-background-color: rgb(96, 0, 144);
-border-left-color: rgb(170, 85, 255);
-background-color: rgb(170, 85, 255);
-font: 10pt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QListWidget" name="listWidget"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="QTextEdit" name="textEdit"/>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="label">
-     <property name="styleSheet">
-      <string notr="true">
-font: 24pt &quot;Comic Sans MS&quot;;
-color: white;
-background-color: rgb(128, 60, 224);</string>
-     </property>
-     <property name="text">
-      <string>Daily Task Planner</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="btn_savechanges">
-     <property name="styleSheet">
-      <string notr="true">border-radius:10px;
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_savechanges">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>443</y>
+      <width>390</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:10px;
 color: white;
 font:11pt;
 background-color: rgb(128, 60, 224);
 </string>
-     </property>
-     <property name="text">
-      <string>Save Changes</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+    </property>
+    <property name="text">
+     <string>Save Changes</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>9</y>
+      <width>786</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 24pt &quot;Comic Sans MS&quot;;
+color: white;
+background-color: rgb(128, 60, 224);</string>
+    </property>
+    <property name="text">
+     <string>Daily Task Planner</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCalendarWidget" name="dsip_kalender">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>60</y>
+      <width>390</width>
+      <height>258</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">selection-background-color: rgb(96, 0, 144);
+border-left-color: rgb(170, 85, 255);
+background-color: rgb(170, 85, 255);
+font: 10pt;</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>324</y>
+      <width>390</width>
+      <height>258</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>60</y>
+      <width>390</width>
+      <height>258</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_home_page">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>586</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Home page</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>878</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
